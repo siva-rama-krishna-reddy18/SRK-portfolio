@@ -1,8 +1,40 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const titles = ['Python Developer', 'AWS Cloud Engineer'];
+  
+  useEffect(() => {
+    const currentTitle = titles[currentIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (displayText.length < currentTitle.length) {
+          setDisplayText(currentTitle.substring(0, displayText.length + 1));
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (displayText.length > 0) {
+          setDisplayText(currentTitle.substring(0, displayText.length - 1));
+        } else {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % titles.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+    
+    return () => clearTimeout(timeout);
+  }, [displayText, currentIndex, isDeleting, titles]);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%224%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
@@ -34,8 +66,12 @@ const Hero = () => {
 
           {/* Animated Professional Title */}
           <div className="mb-6">
-            <div className="text-lg md:text-xl text-blue-300 font-medium animate-pulse">
-              Python Developer & AWS Cloud Expert
+            <div className="text-lg md:text-xl text-blue-300 font-medium h-7 flex items-center justify-center">
+              <span className="mr-1">I'm a</span>
+              <span className="text-purple-300 font-semibold min-w-[200px] text-left">
+                {displayText}
+                <span className="animate-pulse text-blue-400">|</span>
+              </span>
             </div>
             <div className="flex justify-center mt-2">
               <div className="w-32 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"></div>
