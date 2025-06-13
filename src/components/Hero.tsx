@@ -18,13 +18,27 @@ const Hero = () => {
                 className="w-full h-full rounded-full object-cover"
                 onError={(e) => {
                   // Fallback to initials if image fails to load
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling.style.display = 'flex';
+                  const target = e.currentTarget;
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  target.style.display = 'none';
+                  if (fallback) {
+                    fallback.style.display = 'flex';
+                  }
                 }}
               />
               <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-4xl font-bold text-white hidden">
                 SK
               </div>
+            </div>
+          </div>
+
+          {/* Animated Professional Title */}
+          <div className="mb-6">
+            <div className="text-lg md:text-xl text-blue-300 font-medium animate-pulse">
+              Python Developer & AWS Cloud Expert
+            </div>
+            <div className="flex justify-center mt-2">
+              <div className="w-32 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"></div>
             </div>
           </div>
           
