@@ -36,14 +36,31 @@ const Hero = () => {
   }, [displayText, currentIndex, isDeleting, titles]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%224%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-48 h-48 bg-purple-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-32 left-20 w-40 h-40 bg-pink-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute bottom-20 right-10 w-36 h-36 bg-cyan-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '6s' }}></div>
+        
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-12 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/5 to-transparent transform skew-y-12 animate-pulse" style={{ animationDelay: '3s' }}></div>
+        </div>
+        
+        {/* Particle effect overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px] animate-pulse"></div>
+      </div>
       
-      <div className="container mx-auto px-6 text-center relative z-10">
+      {/* Content */}
+      <div className="container mx-auto px-6 text-center relative z-10 text-white">
         <div className="animate-fade-in">
           {/* Profile Photo */}
           <div className="w-40 h-40 mx-auto mb-8 relative">
-            <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20">
+            <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm">
               <img 
                 src="/placeholder.svg" 
                 alt="Siva Rama Krishna Reddy Kunchala"
@@ -78,15 +95,15 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
             Siva Rama Krishna Reddy
           </h1>
           
-          <h2 className="text-2xl md:text-3xl mb-8 text-gray-300 font-light">
+          <h2 className="text-2xl md:text-3xl mb-8 text-gray-200 font-light">
             Kunchala
           </h2>
           
-          <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-200">
+          <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-100 backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/10">
             Experienced cloud computing specialist with <span className="text-blue-400 font-semibold">4 years</span> in the industry, 
             excelling in designing, deploying, and managing cloud infrastructure. 
             Proficient in AWS and Google Cloud, emphasizing automation, scalability, and security.
@@ -96,7 +113,7 @@ const Hero = () => {
             {['AWS Cloud', 'Google Cloud', 'Terraform', 'Cloud Security', 'Automation', 'Scalability'].map((skill, index) => (
               <span 
                 key={skill}
-                className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {skill}
@@ -105,7 +122,7 @@ const Hero = () => {
           </div>
           
           <div className="animate-bounce">
-            <ArrowDown className="mx-auto text-blue-400" size={32} />
+            <ArrowDown className="mx-auto text-blue-400 drop-shadow-lg" size={32} />
           </div>
         </div>
       </div>
