@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Menu } from 'lucide-react';
+import { Mail, Linkedin, Youtube, Instagram, Link } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -44,97 +44,107 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <Mail className="text-blue-500 mr-4 flex-shrink-0" size={24} />
-                <div>
-                  <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">srkreddykunchala@gmail.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <Menu className="text-blue-500 mr-4 flex-shrink-0" size={24} />
-                <div>
-                  <h4 className="font-semibold text-gray-900">Phone</h4>
-                  <p className="text-gray-600">+1 (660) 270 6448</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white">
-              <h4 className="text-xl font-bold mb-2">Let's Build Something Amazing</h4>
-              <p>
-                Whether you need cloud migration, infrastructure optimization, or scalable solutions, 
-                I'm here to help transform your vision into reality.
-              </p>
+        {/* Contact Cards Section */}
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-16">
+          {/* Email Me Card */}
+          <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
+            <h3 className="text-2xl font-bold mb-4">Email Me</h3>
+            <p className="text-gray-300 mb-6">Shoot me an email, I'll get back to you asap.</p>
+            <div className="bg-white text-gray-900 px-4 py-3 rounded-lg font-medium">
+              srkreddykunchala@gmail.com
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Name
-                </label>
-                <Input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full"
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <Input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full"
-                  placeholder="Enter your email address"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full"
-                  placeholder="Tell me about your project or how I can help you..."
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Send Message
-              </Button>
-            </form>
+          {/* Connect on LinkedIn Card */}
+          <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
+            <h3 className="text-2xl font-bold mb-4">Connect on LinkedIn</h3>
+            <p className="text-gray-300 mb-6">Let's connect and share valuable insights.</p>
+            <div className="bg-white text-gray-900 px-4 py-3 rounded-lg font-medium">
+              linkedin.com/in/srkreddykunchala
+            </div>
           </div>
+
+          {/* Stay Social Card */}
+          <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
+            <h3 className="text-2xl font-bold mb-4">Stay Social</h3>
+            <p className="text-gray-300 mb-6">Catch all the latest updates with me.</p>
+            <div className="flex justify-center space-x-4">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <Linkedin size={28} />
+              </a>
+              <a href="#" className="text-white hover:text-red-400 transition-colors">
+                <Youtube size={28} />
+              </a>
+              <a href="#" className="text-white hover:text-pink-400 transition-colors">
+                <Instagram size={28} />
+              </a>
+              <a href="#" className="text-white hover:text-blue-300 transition-colors">
+                <Link size={28} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Form Section */}
+        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Send a Message</h3>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                Your Name
+              </label>
+              <Input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full"
+                placeholder="Enter your email address"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                Message
+              </label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full"
+                placeholder="Tell me about your project or how I can help you..."
+              />
+            </div>
+
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Send Message
+            </Button>
+          </form>
         </div>
       </div>
     </section>
