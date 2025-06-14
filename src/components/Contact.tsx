@@ -1,38 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Mail, Linkedin, Youtube, Instagram, Link, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <section id="contact" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
@@ -45,7 +15,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Cards Section */}
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-16">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           {/* Email Me Card */}
           <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4">Email Me</h3>
@@ -101,68 +71,6 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Contact Form Section */}
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Send a Message</h3>
-          
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                Your Name
-              </label>
-              <Input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full"
-                placeholder="Enter your full name"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email Address
-              </label>
-              <Input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full"
-                placeholder="Enter your email address"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full"
-                placeholder="Tell me about your project or how I can help you..."
-              />
-            </div>
-
-            <Button 
-              type="submit" 
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Send Message
-            </Button>
-          </form>
         </div>
       </div>
     </section>
