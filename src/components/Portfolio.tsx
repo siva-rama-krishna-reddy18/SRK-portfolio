@@ -2,7 +2,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-const Portfolio = () => {
+const Projects = () => {
   const projects = [
     {
       title: "File Management and Backup in Wasabi Cloud Storage",
@@ -29,7 +29,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-900 text-white">
+    <section id="Projects" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Notable Projects</h2>
@@ -88,4 +88,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;
