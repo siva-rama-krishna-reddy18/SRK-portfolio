@@ -50,7 +50,7 @@ const About = () => {
         "Configured and mounted FSx ONTAP volumes to EC2 instances using Linux commands, ensuring seamless integration and functionality.",
         "Facilitated communication between teams to streamline the migration process from on-premise to AWS Cloud."
       ],
-      skills: ["Amazon EC2", "MySQL", "Cloud Services", "Kubernetes"]
+      skills: ["Amazon EC2", "Amazon VPC", "Amazon S3", "IAM", "Terraform", "MySQL", "Cloud Services"]
     },
     {
       year: "Aug 2020 - May 2021",
