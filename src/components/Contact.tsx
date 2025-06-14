@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Linkedin, Youtube, Instagram, Link } from 'lucide-react';
+import { Mail, Linkedin, Youtube, Instagram, Link, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -81,6 +81,14 @@ const Contact = () => {
                 className="text-white hover:text-blue-400 transition-colors"
               >
                 <Linkedin size={28} />
+              </a>
+              <a 
+                href="https://github.com/siva-rama-krishna-reddy18/siva-rama-krishna-reddy18" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-400 transition-colors"
+              >
+                <Github size={28} />
               </a>
               <a href="#" className="text-white hover:text-red-400 transition-colors">
                 <Youtube size={28} />
