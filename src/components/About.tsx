@@ -1,26 +1,28 @@
+
 import React from 'react';
-import { Book, Calendar, Award } from 'lucide-react';
+import { Book, Calendar, Award, Hexagon } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const About = () => {
-  const timeline = [
+  const education = [
     {
       year: "2017-2021",
-      type: "education",
       title: "Bachelor's in Electronics and Communication Engineering",
       institution: "Jawaharlal Nehru Technological University Kakinada",
       description: "Foundation in engineering principles and technology"
     },
     {
       year: "2023-2025",
-      type: "education", 
       title: "Master's in Computer Science",
       institution: "Florida Atlantic University",
       description: "Advanced studies in computer science and cloud technologies"
-    },
+    }
+  ];
+
+  const experience = [
     {
       year: "2020-2024",
-      type: "experience",
       title: "Cloud Computing Specialist",
       institution: "4 Years Industry Experience",
       description: "Designing, deploying, and managing scalable cloud infrastructure"
@@ -78,11 +80,15 @@ const About = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <Tabs defaultValue="timeline" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="timeline" className="flex items-center gap-2">
+          <Tabs defaultValue="education" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 mb-8">
+              <TabsTrigger value="education" className="flex items-center gap-2">
                 <Book size={16} />
-                Education & Experience
+                Education
+              </TabsTrigger>
+              <TabsTrigger value="experience" className="flex items-center gap-2">
+                <Calendar size={16} />
+                Experience
               </TabsTrigger>
               <TabsTrigger value="certifications" className="flex items-center gap-2">
                 <Award size={16} />
@@ -90,21 +96,17 @@ const About = () => {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="timeline" className="mt-0">
+            <TabsContent value="education" className="mt-0">
               <div className="relative">
                 <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
                 
-                {timeline.map((item, index) => (
+                {education.map((item, index) => (
                   <div key={index} className="relative flex items-center mb-12 last:mb-0">
                     <div className="absolute left-6 w-4 h-4 bg-white border-4 border-blue-500 rounded-full shadow-lg"></div>
                     
                     <div className="ml-20 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
                       <div className="flex items-center mb-3">
-                        {item.type === 'education' ? (
-                          <Book className="text-blue-500 mr-2" size={20} />
-                        ) : (
-                          <Calendar className="text-purple-500 mr-2" size={20} />
-                        )}
+                        <Book className="text-blue-500 mr-2" size={20} />
                         <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
                           {item.year}
                         </span>
@@ -119,7 +121,57 @@ const About = () => {
               </div>
             </TabsContent>
 
+            <TabsContent value="experience" className="mt-0">
+              <div className="relative">
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
+                
+                {experience.map((item, index) => (
+                  <div key={index} className="relative flex items-center mb-12 last:mb-0">
+                    <div className="absolute left-6 w-4 h-4 bg-white border-4 border-purple-500 rounded-full shadow-lg"></div>
+                    
+                    <div className="ml-20 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500">
+                      <div className="flex items-center mb-3">
+                        <Calendar className="text-purple-500 mr-2" size={20} />
+                        <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                          {item.year}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                      <h4 className="text-lg text-purple-600 font-medium mb-3">{item.institution}</h4>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+
             <TabsContent value="certifications" className="mt-0">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Certifications</h3>
+                
+                <TooltipProvider>
+                  <div className="flex flex-wrap justify-center gap-6 mb-8">
+                    {certifications.map((cert, index) => (
+                      <Tooltip key={index}>
+                        <TooltipTrigger asChild>
+                          <div className="cursor-pointer transform hover:scale-110 transition-transform duration-200">
+                            <Hexagon 
+                              size={48} 
+                              className="text-blue-500 hover:text-purple-500 transition-colors duration-200"
+                              fill="currentColor"
+                            />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="font-semibold">{cert.title}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </div>
+                </TooltipProvider>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-6">
                 {certifications.map((cert, index) => (
                   <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500">
