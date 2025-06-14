@@ -103,7 +103,7 @@ const Hero = () => {
 
           {/* Right side - Profile Photo */}
           <div className="flex-shrink-0 ml-12">
-            <div className="w-80 h-80 relative">
+            <div className="w-80 h-75 relative">
               <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
                 <img 
                   src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
