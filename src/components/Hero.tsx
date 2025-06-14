@@ -38,7 +38,7 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-green-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
         {/* Floating geometric shapes */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-40 right-20 w-48 h-48 bg-purple-500/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -63,7 +63,7 @@ const Hero = () => {
             <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm">
               <img 
                 src="/placeholder.svg" 
-                alt="Siva Rama Krishna Reddy Kunchala"
+                alt="Siva Rama Krishna Reddy"
                 className="w-full h-full rounded-full object-cover"
                 onError={(e) => {
                   // Fallback to initials if image fails to load
@@ -98,10 +98,6 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
             Siva Rama Krishna Reddy
           </h1>
-          
-          <h2 className="text-2xl md:text-3xl mb-8 text-gray-200 font-light">
-            Kunchala
-          </h2>
           
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-100 backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/10">
             Experienced cloud computing specialist with <span className="text-blue-400 font-semibold">4 years</span> in the industry, 
