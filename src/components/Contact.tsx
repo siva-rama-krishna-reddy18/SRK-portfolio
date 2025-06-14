@@ -59,9 +59,14 @@ const Contact = () => {
           <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4">Connect on LinkedIn</h3>
             <p className="text-gray-300 mb-6">Let's connect and share valuable insights.</p>
-            <div className="bg-white text-gray-900 px-4 py-3 rounded-lg font-medium">
+            <a 
+              href="https://linkedin.com/in/srkreddykunchala" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white text-gray-900 px-4 py-3 rounded-lg font-medium inline-block hover:bg-gray-100 transition-colors"
+            >
               linkedin.com/in/srkreddykunchala
-            </div>
+            </a>
           </div>
 
           {/* Stay Social Card */}
@@ -69,7 +74,12 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-4">Stay Social</h3>
             <p className="text-gray-300 mb-6">Catch all the latest updates with me.</p>
             <div className="flex justify-center space-x-4">
-              <a href="#" className="text-white hover:text-blue-400 transition-colors">
+              <a 
+                href="https://linkedin.com/in/srkreddykunchala" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-400 transition-colors"
+              >
                 <Linkedin size={28} />
               </a>
               <a href="#" className="text-white hover:text-red-400 transition-colors">
