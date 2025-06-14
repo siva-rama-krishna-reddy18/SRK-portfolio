@@ -9,7 +9,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -39,7 +39,7 @@ const Navigation = () => {
           <div className={`text-2xl font-bold ${
             isScrolled ? 'text-gray-900' : 'text-white'
           }`}>
-            SK
+            SIVA RAMA KRISHNA REDDY
           </div>
 
           {/* Desktop Navigation */}
