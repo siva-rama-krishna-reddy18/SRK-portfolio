@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
@@ -61,7 +62,7 @@ const Hero = () => {
           <div className="w-40 h-40 mx-auto mb-8 relative">
             <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
               <img 
-                src="/SRK-portfolio/lovable-uploads/05f02f56-3537-4021-9f61-f7d384b35397.png" 
+                src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
                 alt="Siva Rama Krishna Reddy"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -72,13 +73,13 @@ const Hero = () => {
           <div className="mb-6">
             <div className="text-lg md:text-xl text-blue-300 font-medium h-7 flex items-center justify-center">
               <span className="mr-1">I'm a</span>
-              <span className="text-purple-300 font-semibold min-w-[200px] text-left">
+              <span className="text-green-400 font-semibold min-w-[200px] text-left">
                 {displayText}
-                <span className="animate-pulse text-blue-400">|</span>
+                <span className="animate-pulse text-green-300">|</span>
               </span>
             </div>
             <div className="flex justify-center mt-2">
-              <div className="w-32 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"></div>
+              <div className="w-32 h-0.5 bg-gradient-to-r from-green-400 to-green-600 animate-pulse"></div>
             </div>
           </div>
           
