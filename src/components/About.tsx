@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Book, Calendar, Award, Hexagon, Building, Briefcase } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -75,35 +74,40 @@ const About = () => {
       issuer: "Amazon Web Services", 
       date: "2023",
       status: "Active",
-      description: "AWS Certified Cloud Practitioner with a strong foundation in AWS core services, cloud concepts, billing, and security best practices"
+      description: "AWS Certified Cloud Practitioner with a strong foundation in AWS core services, cloud concepts, billing, and security best practices",
+      color: "bg-orange-500"
     },
     {
       title: "Python Foundation Certificate",
       issuer: "Infosys SpringBoard", 
       date: "2025",
       status: "Active",
-      description: "Skilled in Python fundamentals including data types, control structures, functions, file handling, and object-oriented programming."
+      description: "Skilled in Python fundamentals including data types, control structures, functions, file handling, and object-oriented programming.",
+      color: "bg-blue-500"
     },
     {
       title: "Software Engineer Intern",
       issuer: "Hacker Rank", 
       date: "2025",
       status: "Active",
-      description: "Completed the HackerRank Software Engineer Intern course, gaining hands-on experience in data structures, algorithms, and real-world coding challenges."
+      description: "Completed the HackerRank Software Engineer Intern course, gaining hands-on experience in data structures, algorithms, and real-world coding challenges.",
+      color: "bg-green-500"
     },
     {
       title: "AWS Cloud Technical Essentials",
       issuer: "Amazon Web Services", 
       date: "2025",
       status: "Active",
-      description: "Completed AWS Cloud Technical Essentials, gaining hands-on knowledge of core AWS services, cloud architecture, and deployment best practices."
+      description: "Completed AWS Cloud Technical Essentials, gaining hands-on knowledge of core AWS services, cloud architecture, and deployment best practices.",
+      color: "bg-orange-500"
     },
     {
       title: "Career Essentials in Github Professional Certificate",
       issuer: "Github", 
       date: "2025",
       status: "Active",
-      description: "Completed the Career Essentials in GitHub Professional Certificate, gaining practical skills in version control, Git, GitHub workflows, and collaboration best practices for software development."
+      description: "Completed the Career Essentials in GitHub Professional Certificate, gaining practical skills in version control, Git, GitHub workflows, and collaboration best practices for software development.",
+      color: "bg-purple-500"
     }
   ];
 
@@ -230,11 +234,23 @@ const About = () => {
                       <Tooltip key={index}>
                         <TooltipTrigger asChild>
                           <div className="cursor-pointer transform hover:scale-110 transition-transform duration-200">
-                            <Hexagon 
-                              size={48} 
-                              className="text-blue-500 hover:text-purple-500 transition-colors duration-200"
-                              fill="currentColor"
-                            />
+                            <div className="relative w-16 h-16">
+                              {/* Hexagonal badge background */}
+                              <div className={`w-full h-full ${cert.color} transform rotate-0`} 
+                                   style={{
+                                     clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                                   }}>
+                              </div>
+                              {/* Inner content */}
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="text-white text-xs font-bold text-center leading-tight">
+                                  {cert.issuer === "Amazon Web Services" ? "AWS" : 
+                                   cert.issuer === "Github" ? "GH" :
+                                   cert.issuer === "Hacker Rank" ? "HR" :
+                                   cert.issuer === "Infosys SpringBoard" ? "PY" : "CERT"}
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </TooltipTrigger>
                         <TooltipContent>
