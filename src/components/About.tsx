@@ -6,14 +6,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 const About = () => {
   const timeline = [
     {
-      year: "2020",
+      year: "2017-2021",
       type: "education",
       title: "Bachelor's in Electronics and Communication Engineering",
       institution: "Jawaharlal Nehru Technological University Kakinada",
       description: "Foundation in engineering principles and technology"
     },
     {
-      year: "2022",
+      year: "2023-2025",
       type: "education", 
       title: "Master's in Computer Science",
       institution: "Florida Atlantic University",
@@ -30,32 +30,39 @@ const About = () => {
 
   const certifications = [
     {
-      title: "AWS Certified Solutions Architect - Professional",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      status: "Active",
-      description: "Advanced certification demonstrating expertise in designing distributed applications and systems on AWS"
-    },
-    {
-      title: "Google Cloud Professional Cloud Architect",
-      issuer: "Google Cloud",
-      date: "2022",
-      status: "Active", 
-      description: "Professional-level certification for designing and managing Google Cloud solutions"
-    },
-    {
-      title: "Terraform Associate",
-      issuer: "HashiCorp",
-      date: "2023",
-      status: "Active",
-      description: "Infrastructure as Code certification for cloud provisioning and management"
-    },
-    {
-      title: "AWS Certified DevOps Engineer - Professional",
+      title: "AWS Certified Cloud Practitioner",
       issuer: "Amazon Web Services", 
-      date: "2024",
+      date: "2023",
       status: "Active",
-      description: "Advanced certification for implementing DevOps practices on AWS"
+      description: "AWS Certified Cloud Practitioner with a strong foundation in AWS core services, cloud concepts, billing, and security best practices"
+    }
+     {
+      title: "Python Foundation Certificate",
+      issuer: "Infosys SpringBoard", 
+      date: "2025",
+      status: "Active",
+      description: ""Skilled in Python fundamentals including data types, control structures, functions, file handling, and object-oriented programming.
+    }
+  {
+      title: "Software Engineer Intern",
+      issuer: "Hacker Rank", 
+      date: "2025",
+      status: "Active",
+      description: "Completed the HackerRank Software Engineer Intern course, gaining hands-on experience in data structures, algorithms, and real-world coding challenges."
+    }
+  {
+      title: "AWS CLoud Technical Essentials",
+      issuer: "Amazon Web Services", 
+      date: "2025",
+      status: "Active",
+      description: "Completed AWS Cloud Technical Essentials, gaining hands-on knowledge of core AWS services, cloud architecture, and deployment best practices."
+    }
+  {
+      title: "Career Essentials in Github Professional Certificate",
+      issuer: "Github", 
+      date: "2025",
+      status: "Active",
+      description: "Completed the Career Essentials in GitHub Professional Certificate, gaining practical skills in version control, Git, GitHub workflows, and collaboration best practices for software development."
     }
   ];
 
