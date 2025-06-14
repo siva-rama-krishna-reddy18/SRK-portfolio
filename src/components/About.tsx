@@ -35,35 +35,35 @@ const About = () => {
       date: "2023",
       status: "Active",
       description: "AWS Certified Cloud Practitioner with a strong foundation in AWS core services, cloud concepts, billing, and security best practices"
-    }
+    },
      {
       title: "Python Foundation Certificate",
       issuer: "Infosys SpringBoard", 
       date: "2025",
       status: "Active",
       description: ""Skilled in Python fundamentals including data types, control structures, functions, file handling, and object-oriented programming.
-    }
-  {
+    }.
+    {
       title: "Software Engineer Intern",
       issuer: "Hacker Rank", 
       date: "2025",
       status: "Active",
       description: "Completed the HackerRank Software Engineer Intern course, gaining hands-on experience in data structures, algorithms, and real-world coding challenges."
-    }
-  {
+     },
+    {
       title: "AWS CLoud Technical Essentials",
       issuer: "Amazon Web Services", 
       date: "2025",
       status: "Active",
       description: "Completed AWS Cloud Technical Essentials, gaining hands-on knowledge of core AWS services, cloud architecture, and deployment best practices."
-    }
-  {
+     },
+    {
       title: "Career Essentials in Github Professional Certificate",
       issuer: "Github", 
       date: "2025",
       status: "Active",
       description: "Completed the Career Essentials in GitHub Professional Certificate, gaining practical skills in version control, Git, GitHub workflows, and collaboration best practices for software development."
-    }
+     }
   ];
 
   return (
