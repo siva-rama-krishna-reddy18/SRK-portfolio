@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10 text-white">
         <div className="animate-fade-in">
           {/* Profile Photo */}
-          <div className="w-40 h-40 mx-auto mb-8 relative">
+          <div className="w-40 h-35 mx-auto mb-8 relative">
             <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
               <img 
                 src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
