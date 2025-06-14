@@ -56,57 +56,62 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-6 text-center relative z-10 text-white">
-        <div className="animate-fade-in">
-          {/* Profile Photo */}
-          <div className="w-40 h-39 mx-auto mb-8 relative">
-            <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
-              <img 
-                src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
-                alt="Siva Rama Krishna Reddy"
-                className="w-full h-full rounded-full object-cover"
-              />
+      <div className="container mx-auto px-6 relative z-10 text-white">
+        <div className="animate-fade-in flex items-center justify-between max-w-6xl mx-auto">
+          {/* Left side content */}
+          <div className="flex-1 text-left">
+            {/* Animated Professional Title */}
+            <div className="mb-6">
+              <div className="text-lg md:text-xl text-blue-300 font-medium h-7 flex items-center">
+                <span className="mr-1">I'm a</span>
+                <span className="text-green-400 font-semibold min-w-[200px]">
+                  {displayText}
+                  <span className="animate-pulse text-green-300">|</span>
+                </span>
+              </div>
+              <div className="flex mt-2">
+                <div className="w-32 h-0.5 bg-gradient-to-r from-green-400 to-green-600 animate-pulse"></div>
+              </div>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
+              Siva Rama Krishna Reddy
+            </h1>
+            
+            <p className="text-lg md:text-xl mb-8 max-w-3xl leading-relaxed text-gray-100 backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/10">
+              Experienced cloud computing specialist with <span className="text-blue-400 font-semibold">4 years</span> in the industry, 
+              excelling in designing, deploying, and managing cloud infrastructure. 
+              Proficient in AWS and Google Cloud, emphasizing automation, scalability, and security.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 mb-8">
+              {['AWS Cloud', 'Google Cloud', 'Terraform', 'Cloud Security', 'Automation', 'Scalability'].map((skill, index) => (
+                <span 
+                  key={skill}
+                  className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+            
+            <div className="animate-bounce">
+              <ArrowDown className="text-blue-400 drop-shadow-lg" size={32} />
             </div>
           </div>
 
-          {/* Animated Professional Title */}
-          <div className="mb-6">
-            <div className="text-lg md:text-xl text-blue-300 font-medium h-7 flex items-center justify-center">
-              <span className="mr-1">I'm a</span>
-              <span className="text-green-400 font-semibold min-w-[200px] text-left">
-                {displayText}
-                <span className="animate-pulse text-green-300">|</span>
-              </span>
+          {/* Right side - Profile Photo */}
+          <div className="flex-shrink-0 ml-12">
+            <div className="w-80 h-80 relative">
+              <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
+                <img 
+                  src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
+                  alt="Siva Rama Krishna Reddy"
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
             </div>
-            <div className="flex justify-center mt-2">
-              <div className="w-32 h-0.5 bg-gradient-to-r from-green-400 to-green-600 animate-pulse"></div>
-            </div>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
-            Siva Rama Krishna Reddy
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-100 backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/10">
-            Experienced cloud computing specialist with <span className="text-blue-400 font-semibold">4 years</span> in the industry, 
-            excelling in designing, deploying, and managing cloud infrastructure. 
-            Proficient in AWS and Google Cloud, emphasizing automation, scalability, and security.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {['AWS Cloud', 'Google Cloud', 'Terraform', 'Cloud Security', 'Automation', 'Scalability'].map((skill, index) => (
-              <span 
-                key={skill}
-                className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-          
-          <div className="animate-bounce">
-            <ArrowDown className="mx-auto text-blue-400 drop-shadow-lg" size={32} />
           </div>
         </div>
       </div>
