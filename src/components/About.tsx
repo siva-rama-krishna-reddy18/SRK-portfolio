@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Book, Calendar, Award, Hexagon } from 'lucide-react';
+import { Book, Calendar, Award, Hexagon, Building, Briefcase } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
@@ -22,10 +22,50 @@ const About = () => {
 
   const experience = [
     {
-      year: "2020-2024",
-      title: "Cloud Computing Specialist",
-      institution: "4 Years Industry Experience",
-      description: "Designing, deploying, and managing scalable cloud infrastructure"
+      year: "Jan 2024 - Apr 2025",
+      title: "Graduate Teaching Assistant",
+      institution: "Florida Atlantic University",
+      type: "Part-time · On-site",
+      duration: "1 yr 4 mos",
+      description: "As a Graduate Teaching Assistant in Cloud Security, I assist in teaching and evaluating advanced cloud security concepts, secure architecture design, and risk management strategies. I mentor students in hands-on labs, threat mitigation, and compliance frameworks (e.g., NIST, ISO), and am responsible for grading assignments, exams, and projects related to cloud security topics.",
+      responsibilities: [
+        "Assist in teaching cloud security principles, focusing on secure cloud architecture, virtualization risks, and compliance frameworks (NIST, ISO).",
+        "Guide students on distributed systems, IaaS/PaaS/SaaS models, and cloud performance optimization, with emphasis on AWS, Azure, and Owl Cloud platforms.",
+        "Support instruction on cybersecurity metrics, threat modeling, and tools like SIEM and Wireshark to enhance incident response and security posture evaluations.",
+        "Grade assignments, exams, and projects on cloud security topics, ensuring alignment with course objectives and providing detailed feedback to students.",
+        "Mentor students on cloud security best practices, including data encryption, access control, and network defense mechanisms through real-world case studies.",
+        "Collaborate with faculty to refine and update course materials, incorporating emerging trends in cyber-physical systems security and DevSecOps."
+      ]
+    },
+    {
+      year: "Jan 2022 - Aug 2023",
+      title: "Cloud Engineer",
+      institution: "HCLTech",
+      type: "Full-time",
+      duration: "1 yr 8 mos",
+      description: "Collaborated with stakeholders to gather requirements and create detailed specifications and inventory documentation for FSx ONTAP volume migrations in Confluence.",
+      responsibilities: [
+        "Scheduled and conducted meetings with Subject Matter Experts (SMEs) to review and approve migration plans.",
+        "Raised and managed storage requests with the infrastructure team for volume creation.",
+        "Configured and mounted FSx ONTAP volumes to EC2 instances using Linux commands, ensuring seamless integration and functionality.",
+        "Facilitated communication between teams to streamline the migration process from on-premise to AWS Cloud."
+      ],
+      skills: ["Amazon EC2", "MySQL", "Cloud Services", "Kubernetes"]
+    },
+    {
+      year: "Aug 2020 - May 2021",
+      title: "Web Development Intern",
+      institution: "Star Wall Interio",
+      type: "Internship · Hybrid",
+      duration: "10 mos",
+      description: "Assisted the design and marketing team in enhancing the website for Star Wall Interio.",
+      responsibilities: [
+        "Assist the design and marketing team in enhancing the website, including UI/UX improvements, content updates, and design integration.",
+        "Collaborate with the team to develop new features for the website, ensuring it is functional, responsive, and visually appealing.",
+        "Help optimize the website for SEO and improve user experience.",
+        "Ensure the website aligns with the brand identity and digital marketing goals."
+      ],
+      skills: ["HTML", "CSS", "JavaScript"]
     }
   ];
 
@@ -87,7 +127,7 @@ const About = () => {
                 Education
               </TabsTrigger>
               <TabsTrigger value="experience" className="flex items-center gap-2">
-                <Calendar size={16} />
+                <Briefcase size={16} />
                 Experience
               </TabsTrigger>
               <TabsTrigger value="certifications" className="flex items-center gap-2">
@@ -126,20 +166,54 @@ const About = () => {
                 <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
                 
                 {experience.map((item, index) => (
-                  <div key={index} className="relative flex items-center mb-12 last:mb-0">
-                    <div className="absolute left-6 w-4 h-4 bg-white border-4 border-purple-500 rounded-full shadow-lg"></div>
+                  <div key={index} className="relative flex items-start mb-16 last:mb-0">
+                    <div className="absolute left-6 w-4 h-4 bg-white border-4 border-purple-500 rounded-full shadow-lg mt-2"></div>
                     
-                    <div className="ml-20 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500">
+                    <div className="ml-20 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500 w-full">
                       <div className="flex items-center mb-3">
                         <Calendar className="text-purple-500 mr-2" size={20} />
                         <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
                           {item.year}
                         </span>
+                        <span className="ml-2 text-sm text-gray-500">· {item.duration}</span>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                      <h4 className="text-lg text-purple-600 font-medium mb-3">{item.institution}</h4>
-                      <p className="text-gray-600">{item.description}</p>
+                      <div className="flex items-start justify-between flex-wrap gap-2 mb-4">
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-1">{item.title}</h3>
+                          <div className="flex items-center">
+                            <Building size={16} className="text-gray-500 mr-2" />
+                            <h4 className="text-lg text-purple-600 font-medium">{item.institution}</h4>
+                          </div>
+                          <p className="text-sm text-gray-500 mt-1">{item.type}</p>
+                        </div>
+                        
+                        {item.skills && (
+                          <div className="flex flex-wrap gap-2 mt-2 md:mt-0">
+                            {item.skills.map((skill, skillIdx) => (
+                              <span 
+                                key={skillIdx} 
+                                className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      
+                      <p className="text-gray-600 mb-4">{item.description}</p>
+                      
+                      {item.responsibilities && (
+                        <div>
+                          <h5 className="font-semibold text-gray-900 mb-2">Key Responsibilities:</h5>
+                          <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                            {item.responsibilities.map((resp, respIdx) => (
+                              <li key={respIdx}>{resp}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
