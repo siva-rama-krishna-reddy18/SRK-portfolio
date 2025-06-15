@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-white">
         <div className="animate-fade-in flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-6xl mx-auto">
         
-          {/* Right side - Profile Photo */}
+       {/* Right side - Profile Photo */}
           <div className="flex-shrink-0 ml-12">
             <div className="w-80 h-75 relative">
               <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
