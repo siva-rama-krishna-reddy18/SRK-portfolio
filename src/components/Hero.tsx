@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
@@ -57,13 +58,13 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-white">
         <div className="animate-fade-in flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-6xl mx-auto">
-          {/* Profile Photo - Direct Image without Circle */}
+          {/* Profile Photo - Clean Direct Image */}
           <div className="flex-shrink-0 mb-8 lg:mb-0 lg:order-2 lg:ml-12">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] relative mx-auto">
               <img 
                 src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
                 alt="Siva Rama Krishna Reddy"
-                className="w-full h-full object-cover shadow-2xl border-4 border-white/30 backdrop-blur-sm rounded-lg"
+                className="w-full h-full object-cover shadow-2xl"
               />
             </div>
           </div>
