@@ -56,54 +56,11 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10 text-white">
-        <div className="animate-fade-in flex items-center justify-between max-w-6xl mx-auto">
-          {/* Left side content */}
-          <div className="flex-1 text-left">
-            {/* Animated Professional Title */}
-            <div className="mb-6">
-              <div className="text-lg md:text-xl text-blue-300 font-medium h-7 flex items-center">
-                <span className="mr-1">I'm a</span>
-                <span className="text-green-400 font-semibold min-w-[200px]">
-                  {displayText}
-                  <span className="animate-pulse text-green-300">|</span>
-                </span>
-              </div>
-              <div className="flex mt-2">
-                <div className="w-32 h-0.5 bg-gradient-to-r from-green-400 to-green-600 animate-pulse"></div>
-              </div>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
-              Hello I'm Siva
-            </h1>
-            
-            <p className="text-lg md:text-xl mb-8 max-w-3xl leading-relaxed text-gray-100 backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/10">
-              I'm a Python Developer and AWS Cloud Engineer with <span className="text-blue-400 font-semibold">4 years</span> of experience in the industry, 
-              excelling in designing, deploying, and managing cloud infrastructure. 
-              Proficient in AWS and Google Cloud, emphasizing automation, scalability, and security.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 mb-8">
-              {['AWS Cloud', 'Google Cloud', 'Terraform', 'Cloud Security', 'Automation', 'Scalability'].map((skill, index) => (
-                <span 
-                  key={skill}
-                  className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-            
-            <div className="animate-bounce">
-              <ArrowDown className="text-blue-400 drop-shadow-lg" size={32} />
-            </div>
-          </div>
-
-          {/* Right side - Profile Photo */}
-          <div className="flex-shrink-0 ml-12">
-            <div className="w-80 h-75 relative">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 text-white">
+        <div className="animate-fade-in flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-6xl mx-auto">
+          {/* Profile Photo - Mobile First */}
+          <div className="flex-shrink-0 mb-8 lg:mb-0 lg:order-2 lg:ml-12">
+            <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 relative mx-auto">
               <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-sm overflow-hidden">
                 <img 
                   src="/SRK-portfolio/lovable-uploads/2d2fc46b-8f61-4672-a8dc-6d704624d687.png" 
@@ -111,6 +68,49 @@ const Hero = () => {
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Left side content */}
+          <div className="flex-1 text-center lg:text-left lg:order-1">
+            {/* Animated Professional Title */}
+            <div className="mb-6">
+              <div className="text-base md:text-lg lg:text-xl text-blue-300 font-medium h-6 md:h-7 flex items-center justify-center lg:justify-start">
+                <span className="mr-1">I'm a</span>
+                <span className="text-green-400 font-semibold min-w-[160px] md:min-w-[200px]">
+                  {displayText}
+                  <span className="animate-pulse text-green-300">|</span>
+                </span>
+              </div>
+              <div className="flex justify-center lg:justify-start mt-2">
+                <div className="w-24 md:w-32 h-0.5 bg-gradient-to-r from-green-400 to-green-600 animate-pulse"></div>
+              </div>
+            </div>
+            
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
+              Hello I'm Siva
+            </h1>
+            
+            <p className="text-base md:text-lg lg:text-xl mb-8 max-w-3xl leading-relaxed text-gray-100 backdrop-blur-sm bg-white/5 p-4 md:p-6 rounded-2xl border border-white/10 mx-auto lg:mx-0">
+              I'm a Python Developer and AWS Cloud Engineer with <span className="text-blue-400 font-semibold">4 years</span> of experience in the industry, 
+              excelling in designing, deploying, and managing cloud infrastructure. 
+              Proficient in AWS and Google Cloud, emphasizing automation, scalability, and security.
+            </p>
+            
+            <div className="flex flex-wrap gap-2 md:gap-4 mb-8 justify-center lg:justify-start">
+              {['AWS Cloud', 'Google Cloud', 'Terraform', 'Cloud Security', 'Automation', 'Scalability'].map((skill, index) => (
+                <span 
+                  key={skill}
+                  className="px-3 md:px-6 py-2 md:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs md:text-sm font-medium border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-lg"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+            
+            <div className="animate-bounce flex justify-center lg:justify-start">
+              <ArrowDown className="text-blue-400 drop-shadow-lg" size={24} />
             </div>
           </div>
         </div>
