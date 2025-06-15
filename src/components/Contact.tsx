@@ -15,42 +15,42 @@ const Contact = () => {
         </div>
 
         {/* Contact Cards Section */}
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Email Me Card */}
-          <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-4">Email Me</h3>
-            <p className="text-gray-300 mb-6">Shoot me an email, I'll get back to you asap.</p>
-            <div className="bg-white text-gray-900 px-4 py-3 rounded-lg font-medium">
+          <div className="bg-gray-900 text-white p-6 md:p-8 rounded-lg text-center">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Email Me</h3>
+            <p className="text-gray-300 mb-6 text-sm md:text-base">Shoot me an email, I'll get back to you asap.</p>
+            <div className="bg-white text-gray-900 px-3 py-2 md:px-4 md:py-3 rounded-lg font-medium text-sm md:text-base break-all">
               srkreddykunchala@gmail.com
             </div>
           </div>
 
           {/* Connect on LinkedIn Card */}
-          <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-4">Connect on LinkedIn</h3>
-            <p className="text-gray-300 mb-6">Let's connect and share valuable insights.</p>
+          <div className="bg-gray-900 text-white p-6 md:p-8 rounded-lg text-center">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Connect on LinkedIn</h3>
+            <p className="text-gray-300 mb-6 text-sm md:text-base">Let's connect and share valuable insights.</p>
             <a 
               href="https://linkedin.com/in/srkreddykunchala" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-gray-900 px-4 py-3 rounded-lg font-medium inline-block hover:bg-gray-100 transition-colors"
+              className="bg-white text-gray-900 px-3 py-2 md:px-4 md:py-3 rounded-lg font-medium inline-block hover:bg-gray-100 transition-colors text-sm md:text-base break-all"
             >
               linkedin.com/in/srkreddykunchala
             </a>
           </div>
 
           {/* Stay Social Card */}
-          <div className="bg-gray-900 text-white p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-4">Stay Social</h3>
-            <p className="text-gray-300 mb-6">Catch all the latest updates with me.</p>
-            <div className="flex justify-center space-x-4">
+          <div className="bg-gray-900 text-white p-6 md:p-8 rounded-lg text-center">
+            <h3 className="text-xl md:text-2xl font-bold mb-4">Stay Social</h3>
+            <p className="text-gray-300 mb-6 text-sm md:text-base">Catch all the latest updates with me.</p>
+            <div className="flex justify-center space-x-3 md:space-x-4">
               <a 
                 href="https://linkedin.com/in/srkreddykunchala" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-blue-400 transition-colors"
               >
-                <Linkedin size={28} />
+                <Linkedin size={24} className="md:w-7 md:h-7" />
               </a>
               <a 
                 href="https://github.com/siva-rama-krishna-reddy18/siva-rama-krishna-reddy18" 
@@ -58,16 +58,16 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-400 transition-colors"
               >
-                <Github size={28} />
+                <Github size={24} className="md:w-7 md:h-7" />
               </a>
               <a href="#" className="text-white hover:text-red-400 transition-colors">
-                <Youtube size={28} />
+                <Youtube size={24} className="md:w-7 md:h-7" />
               </a>
               <a href="#" className="text-white hover:text-pink-400 transition-colors">
-                <Instagram size={28} />
+                <Instagram size={24} className="md:w-7 md:h-7" />
               </a>
               <a href="#" className="text-white hover:text-blue-300 transition-colors">
-                <Link size={28} />
+                <Link size={24} className="md:w-7 md:h-7" />
               </a>
             </div>
           </div>
