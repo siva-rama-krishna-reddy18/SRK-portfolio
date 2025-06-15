@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -24,6 +25,18 @@ const Projects = () => {
         "Scalable serverless architecture"
       ],
       gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Secure & Scalable AWS VPC Architecture",
+      description: "Designed and deployed a highly available, secure, and scalable VPC architecture in AWS, ensuring efficient resource management, security, and resilience for production workloads following AWS best practices.",
+      technologies: ["AWS VPC", "Application Load Balancer", "Auto Scaling Group", "NAT Gateway", "S3 VPC Endpoint"],
+      achievements: [
+        "Improved security with private subnet architecture",
+        "Ensured high availability with multi-AZ deployments",
+        "Enhanced network resilience with multiple NAT Gateways",
+        "Optimized cost and performance with VPC endpoints"
+      ],
+      gradient: "from-orange-500 to-red-500"
     }
   ];
 
@@ -39,7 +52,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={index}
