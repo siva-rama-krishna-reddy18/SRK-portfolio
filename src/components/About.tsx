@@ -118,8 +118,9 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Me</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Passionate about cloud technologies and infrastructure automation, I bring a unique blend of 
-            engineering foundation and advanced computer science knowledge to deliver robust cloud solutions.
+            Hi, I'm Siva Rama Krishna Reddy Kunchala, a dedicated cloud computing professional with a passion for building innovative solutions in the cloud. I have a Master's degree in Computer Science from Florida Atlantic University, where I focused on Cloud Security, AI, and IoT.
+
+With more than 4 years of hands-on experience, I've developed expertise in AWS, Google Cloud, Terraform, and Python. I've worked on impactful projects such as designing cloud backup systems and creating AI-driven audio analysis tools. My career has been driven by a desire to optimize infrastructure and deliver scalable, secure cloud solutions.
           </p>
         </div>
 
