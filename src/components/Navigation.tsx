@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 
@@ -22,10 +23,14 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
       setIsMobileMenuOpen(false);
     }
   };
@@ -47,7 +52,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={(e) => scrollToSection(e, item.href)}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-blue-500 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
@@ -74,7 +79,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={(e) => scrollToSection(e, item.href)}
                 className="block w-full text-left px-6 py-3 text-gray-700 hover:bg-gray-100 transition-colors duration-300"
               >
                 {item.name}
