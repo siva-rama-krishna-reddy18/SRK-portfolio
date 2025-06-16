@@ -90,7 +90,7 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 transform transition-all duration-700 hover:scale-105">
-            Notable Projects
+            Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8 transform scale-x-0 animate-[scale-x-100_0.8s_ease-out_0.3s_forwards] origin-left"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto opacity-0 animate-[fade-in_0.8s_ease-out_0.5s_forwards]">
@@ -103,18 +103,18 @@ const Projects = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevProject}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:-translate-x-1"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-500 hover:scale-125 hover:-translate-x-2 hover:shadow-2xl transform-gpu group animate-bounce hover:animate-none"
             aria-label="Previous project"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} className="transition-all duration-300 group-hover:scale-110 group-hover:-translate-x-1" />
           </button>
           
           <button
             onClick={nextProject}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:translate-x-1"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-500 hover:scale-125 hover:translate-x-2 hover:shadow-2xl transform-gpu group animate-bounce hover:animate-none"
             aria-label="Next project"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={24} className="transition-all duration-300 group-hover:scale-110 group-hover:translate-x-1" />
           </button>
 
           {/* Projects Grid */}
