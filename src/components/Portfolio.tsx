@@ -1,8 +1,10 @@
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Projects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
   const projects = [
     {
       title: "File Management and Backup in Wasabi Cloud Storage",
@@ -37,8 +39,51 @@ const Projects = () => {
         "Optimized cost and performance with VPC endpoints"
       ],
       gradient: "from-orange-500 to-red-500"
+    },
+    {
+      title: "Book Knowledge ChatBot with Shakespeare's Complete Works",
+      description: "A web-based application that uses Google Cloud Run, Flask, and Dialogflow to provide answers to book-related queries. The project centers on the Complete Works of William Shakespeare, available through Project Gutenberg, and integrates a chatbot interface for seamless user interaction.",
+      technologies: ["Google Cloud Run", "Flask", "Dialogflow CX", "Project Gutenberg API", "Python"],
+      achievements: [
+        "Integrated Dialogflow CX Agent for intelligent responses",
+        "Processed complete Shakespeare literary corpus",
+        "Deployed scalable serverless architecture",
+        "Seamless chatbot interface for user queries"
+      ],
+      gradient: "from-green-500 to-teal-500"
     }
   ];
+
+  const nextProject = () => {
+    setCurrentIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  const getVisibleProjects = () => {
+    const visibleCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    const projects_to_show = [];
+    for (let i = 0; i < visibleCount; i++) {
+      const index = (currentIndex + i) % projects.length;
+      projects_to_show.push({ ...projects[index], displayIndex: i });
+    }
+    return projects_to_show;
+  };
+
+  const [visibleProjects, setVisibleProjects] = React.useState(getVisibleProjects());
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setVisibleProjects(getVisibleProjects());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    setVisibleProjects(getVisibleProjects());
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, [currentIndex]);
 
   return (
     <section id="projects" className="py-20 bg-gray-900 text-white overflow-hidden">
@@ -54,59 +99,95 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
-            <div 
-              key={index}
-              className="group bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 opacity-0 animate-fade-in transform translate-y-8"
-              style={{ 
-                animationDelay: `${0.2 + index * 0.2}s`,
-                animationFillMode: 'forwards'
-              }}
-            >
-              <div className={`h-2 bg-gradient-to-r ${project.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
-              
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-all duration-300 transform group-hover:translate-x-1">
-                  {project.title}
-                </h3>
+        <div className="relative max-w-7xl mx-auto">
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevProject}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:-translate-x-1"
+            aria-label="Previous project"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          
+          <button
+            onClick={nextProject}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:translate-x-1"
+            aria-label="Next project"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Projects Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-12">
+            {visibleProjects.map((project, index) => (
+              <div 
+                key={`${currentIndex}-${index}`}
+                className="group bg-gray-800 rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 opacity-0 animate-fade-in transform translate-y-8"
+                style={{ 
+                  animationDelay: `${0.2 + index * 0.2}s`,
+                  animationFillMode: 'forwards'
+                }}
+              >
+                <div className={`h-2 bg-gradient-to-r ${project.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                 
-                <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                  {project.description}
-                </p>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-all duration-300 transform group-hover:translate-x-1">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    {project.description}
+                  </p>
 
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
-                    Key Achievements:
-                  </h4>
-                  <ul className="space-y-2">
-                    {project.achievements.map((achievement, i) => (
-                      <li 
-                        key={i} 
-                        className="flex items-center text-gray-300 group-hover:text-gray-200 transition-all duration-300 transform group-hover:translate-x-1"
-                        style={{ transitionDelay: `${i * 0.1}s` }}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-3 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                      Key Achievements:
+                    </h4>
+                    <ul className="space-y-2">
+                      {project.achievements.map((achievement, i) => (
+                        <li 
+                          key={i} 
+                          className="flex items-center text-gray-300 group-hover:text-gray-200 transition-all duration-300 transform group-hover:translate-x-1"
+                          style={{ transitionDelay: `${i * 0.1}s` }}
+                        >
+                          <ArrowRight className="text-green-400 mr-2 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300" size={16} />
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <span 
+                        key={i}
+                        className="px-3 py-1 bg-gray-700 text-sm rounded-full text-gray-300 border border-gray-600 hover:border-blue-400 hover:bg-gray-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
+                        style={{ transitionDelay: `${i * 0.05}s` }}
                       >
-                        <ArrowRight className="text-green-400 mr-2 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300" size={16} />
-                        {achievement}
-                      </li>
+                        {tech}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span 
-                      key={i}
-                      className="px-3 py-1 bg-gray-700 text-sm rounded-full text-gray-300 border border-gray-600 hover:border-blue-400 hover:bg-gray-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
-                      style={{ transitionDelay: `${i * 0.05}s` }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-blue-500 scale-125' 
+                    : 'bg-gray-600 hover:bg-gray-500'
+                }`}
+                aria-label={`Go to project ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
