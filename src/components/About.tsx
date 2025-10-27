@@ -27,12 +27,12 @@ const About = () => {
       type: "Internship · On-site",
       description: "Developed FoodyBuddy AI chatbot using Ollama for local LLM inference, Node.js backend with RESTful APIs, and React 19 frontend, enabling intelligent food recommendations with enhanced privacy and real-time conversational capabilities.",
       responsibilities: [
-       " Developed FoodyBuddy AI chatbot using Ollama (local LLM), Node.js backend, and React 19 frontend, enabling intelligent food recommendations with enhanced data privacy"
-        "Built RESTful APIs with Node.js/Express.js to integrate Ollama AI models for natural language processing"
-        "Created responsive, modern UI using React 19 with efficient state management and real-time chat capabilities"
-        "Optimized local AI model deployment with Ollama, reducing API costs and improving response latency"
-         "Implemented full-stack solution with prompt engineering, context management, and error handling"
-         "Technologies: Node.js, React 19, Ollama, JavaScript, REST APIs, LLM integration"
+       " Developed FoodyBuddy AI chatbot using Ollama (local LLM), Node.js backend, and React 19 frontend, enabling intelligent food recommendations with enhanced data privacy",
+        "Built RESTful APIs with Node.js/Express.js to integrate Ollama AI models for natural language processing",
+        "Created responsive, modern UI using React 19 with efficient state management and real-time chat capabilities",
+        "Optimized local AI model deployment with Ollama, reducing API costs and improving response latency",
+         "Implemented full-stack solution with prompt engineering, context management, and error handling",
+         "Technologies: Node.js, React 19, Ollama, JavaScript, REST APIs, LLM integration."
       ]
     },
     {
