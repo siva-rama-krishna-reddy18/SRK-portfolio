@@ -21,19 +21,18 @@ const About = () => {
 
   const experience = [
     {
-      year: "Jan 2024 - Apr 2025",
-      title: "Graduate Teaching Assistant",
-      institution: "Florida Atlantic University",
-      type: "Part-time · On-site",
-      duration: "1 yr 4 mos",
-      description: "As a Graduate Teaching Assistant in Cloud Security, I assist in teaching and evaluating advanced cloud security concepts, secure architecture design, and risk management strategies. I mentor students in hands-on labs, threat mitigation, and compliance frameworks (e.g., NIST, ISO), and am responsible for grading assignments, exams, and projects related to cloud security topics.",
+      year: "June 2025 - present",
+      title: "AI Intern",
+      Company: "Cogent Integrated Bussiness Solutions Inc.",
+      type: "Internship · On-site",
+      description: "Developed FoodyBuddy AI chatbot using Ollama for local LLM inference, Node.js backend with RESTful APIs, and React 19 frontend, enabling intelligent food recommendations with enhanced privacy and real-time conversational capabilities.",
       responsibilities: [
-        "Assist in teaching cloud security principles, focusing on secure cloud architecture, virtualization risks, and compliance frameworks (NIST, ISO).",
-        "Guide students on distributed systems, IaaS/PaaS/SaaS models, and cloud performance optimization, with emphasis on AWS, Azure, and Owl Cloud platforms.",
-        "Support instruction on cybersecurity metrics, threat modeling, and tools like SIEM and Wireshark to enhance incident response and security posture evaluations.",
-        "Grade assignments, exams, and projects on cloud security topics, ensuring alignment with course objectives and providing detailed feedback to students.",
-        "Mentor students on cloud security best practices, including data encryption, access control, and network defense mechanisms through real-world case studies.",
-        "Collaborate with faculty to refine and update course materials, incorporating emerging trends in cyber-physical systems security and DevSecOps."
+       " Developed FoodyBuddy AI chatbot using Ollama (local LLM), Node.js backend, and React 19 frontend, enabling intelligent food recommendations with enhanced data privacy"
+        "Built RESTful APIs with Node.js/Express.js to integrate Ollama AI models for natural language processing"
+        "Created responsive, modern UI using React 19 with efficient state management and real-time chat capabilities"
+        "Optimized local AI model deployment with Ollama, reducing API costs and improving response latency"
+         "Implemented full-stack solution with prompt engineering, context management, and error handling"
+         "Technologies: Node.js, React 19, Ollama, JavaScript, REST APIs, LLM integration"
       ]
     },
     {
