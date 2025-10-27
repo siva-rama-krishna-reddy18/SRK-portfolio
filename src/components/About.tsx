@@ -119,7 +119,7 @@ const About = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           I’m a dedicated cloud computing professional with a passion for building innovative solutions in the cloud. I hold a Master's degree in Computer Science from Florida Atlantic University, where I focused on Cloud Security, AI, and IoT.
 
-          With more than 4 years of hands-on experience, I've developed expertise in AWS, Google Cloud, Terraform, and Python. I've worked on impactful projects such as designing cloud backup systems and creating AI-driven audio analysis tools. My career has been driven by a desire to optimize infrastructure and deliver scalable, secure cloud solutions.
+          With more than 3 years of hands-on experience, I've developed expertise in AWS, Google Cloud, Terraform, and Python. I've worked on impactful projects such as designing cloud backup systems and creating AI-driven audio analysis tools. My career has been driven by a desire to optimize infrastructure and deliver scalable, secure cloud solutions.
             </p>
            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           I am currently looking for new opportunities where I can apply my cloud computing skills and continue to grow in a dynamic, forward-thinking environment. I’m excited to contribute to a team that values innovation, scalability, and problem-solving.
